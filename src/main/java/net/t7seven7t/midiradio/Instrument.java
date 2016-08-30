@@ -9,27 +9,34 @@ import org.bukkit.Sound;
  * @author t7seven7t
  */
 public class Instrument {
-	
+
 	public static Sound getInstrument(int patch, int channel) {
-		
+
 		if (channel == 9) { // Drums - should actually be 10 but for some reason java makes it 9...
-			return Sound.NOTE_BASS_DRUM;
+			return Sound.BLOCK_NOTE_BASEDRUM;
 		}
-		
-		if ((patch >= 28 && patch <= 40) || (patch >= 44 && patch <= 46)) { // Guitars & bass
-			return Sound.NOTE_BASS_GUITAR;
+
+		if (patch >= 8 && patch <= 15) { // Chromatic percussion
+			return Sound.BLOCK_NOTE_PLING;
 		}
-		
+
+		if (patch >= 24 && patch <= 39) { // Guitars & bass
+			return Sound.BLOCK_NOTE_BASS;
+		}
+
 		if (patch >= 113 && patch <= 119) { // Percussive
-			return Sound.NOTE_BASS_DRUM;
+			if (patch == 114) { // Steel drums should pling
+				return Sound.BLOCK_NOTE_PLING;
+			}
+			return Sound.BLOCK_NOTE_BASEDRUM;
 		}
-		
+
 		if (patch >= 120 && patch <= 127) { // Misc.
-			return Sound.NOTE_SNARE_DRUM;
+			return Sound.BLOCK_NOTE_SNARE;
 		}
-		
-		return Sound.NOTE_PIANO;
-		
+
+		return Sound.BLOCK_NOTE_HARP;
+
 	}
-	
+
 }

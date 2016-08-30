@@ -4,7 +4,7 @@
 
     <groupId>net.t7seven7t</groupId>
     <artifactId>midiradio</artifactId>
-    <version>1.5</version>
+    <version>1.5.1</version>
     <inceptionYear>2013</inceptionYear>
     <name>MidiRadio</name>
     <description>MidiRadio Plugin for Bukkit.</description>
@@ -25,7 +25,7 @@
     </dependencies>
 
     <build>
-        <finalName>MidiRadio v${version}</finalName>
+        <finalName>MidiRadio-${version}</finalName>
         <sourceDirectory>src/main/java</sourceDirectory>
         <defaultGoal>clean install</defaultGoal>
         <resources>
